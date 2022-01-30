@@ -1,6 +1,5 @@
 const multer = require("multer");
 
-
 // Configuaracion de multer
 function uploadImage(a){
   const storage = multer.diskStorage({
