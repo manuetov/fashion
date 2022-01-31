@@ -16,7 +16,7 @@ class VendorsController {
     });
   };
 
-  // Trae la información de un vendedor y todas sus productos
+  // Trae la información de un vendedor y todos sus productos
   selectOneVendor = (req, res) => {
     let vendor_id = req.params.vendor_id;
     let sqlVendor = `SELECT * FROM vendor WHERE vendor_id = ${vendor_id}`;
@@ -35,19 +35,20 @@ class VendorsController {
     res.render("createVendor");
   };
 
-  //Guarda un nuevo vendedor
+  //Crea un nuevo vendedor
   createVendor = (req, res) => {
     let { name, surname, email, password, phone, description } = req.body;
-    let avatar = req.file.filename;
+    let img = req.file.filename;
+    console.log(req.file);
     let encrypted_password = sha1(password);
     let sql = `INSERT INTO vendor (name, surname, email, password, phone,
-     description, avatar) VALUES ('${name}', '${surname}', '${email}', 
-     '${encrypted_password}', '${phone}', '${description}','${avatar}')`;
+     description, img) VALUES ('${name}', '${surname}', '${email}', 
+     '${encrypted_password}', '${phone}', '${description}','${img}')`;
     connection.query(sql, (error, result) => {
       if (error) throw error;
       console.log(result);
       let vendor_id = result.insertId;
-      res.redirect(`/vendor/oneVendor/${vendor_id}`);
+      res.redirect(`/vendors/oneVendor/${vendor_id}`);
     });
   };
 
@@ -57,13 +58,14 @@ class VendorsController {
     let sql = `DELETE FROM vendor WHERE vendor_id = ${vendor_id}`;
     connection.query(sql, (error, result) => {
       if (error) throw error;
-      res.redirect("/vendor");
+      res.redirect("/vendors");
     });
   };
 
   //Muestra el formulario de edición de vendedor
   showUpdateVendorForm = (req, res) => {
     let vendor_id = req.params.vendor_id;
+    console.log(req.params);
     let sql = `SELECT * FROM vendor WHERE vendor_id = ${vendor_id}`;
     connection.query(sql, (error, result) => {
       if (error) throw error;
@@ -75,14 +77,15 @@ class VendorsController {
   updateVendor = (req, res) => {
     let vendor_id = req.params.vendor_id;
     let { name, surname, email, password } = req.body;
-    let avatar = req.file.filename;
+    let img = req.file.filename;
+    console.log(req.file);
     let encrypted_password = sha1(password);
     let sql = `UPDATE vendor SET name = '${name}',surname = '${surname}', 
-    email = '${email}',password = '${encrypted_password}',avatar = '${avatar}' 
+    email = '${email}', password = '${encrypted_password}',img = '${img}' 
     WHERE vendor_id = '${vendor_id}' `;
     connection.query(sql, (error, result) => {
       if (error) throw error;
-      res.redirect(`/vendor/oneVendor/${vendor_id}`);
+      res.redirect(`/vendors/oneVendor/${vendor_id}`);
     });
   };
 
@@ -107,7 +110,7 @@ class VendorsController {
           res.render("login", { message: "contraseña incorrecta" });
         } else {
           let vendor_id = result[0].vendor_id;
-          res.redirect(`/vendor/oneVendor/${vendor_id}`);
+          res.redirect(`/vendors/oneVendor/${vendor_id}`);
         }
       }
     });

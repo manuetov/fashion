@@ -9,22 +9,22 @@ const uploadImg = require("../middleware/multer");
 router.get("/", vendorsController.selectAllVendors);
 
 //localhost:3000/vendors/oneVendor/:vendor_id
-router.get("/onevendor/:vendor_id", vendorsController.selectOneVendor);
+router.get("/oneVendor/:vendor_id", vendorsController.selectOneVendor);
 
 //localhost:3000/vendors/createVendor
-router.get("/createvendor", vendorsController.viewFormVendor);
+router.get("/createVendor", vendorsController.viewFormVendor);
 
 //localhost:3000/vendors/createVendor
-router.post("/createvendor", uploadImg("vendors"), vendorsController.createVendor);
+router.post("/createVendor", uploadImg("vendors"), vendorsController.createVendor);
 
 //localhost:3000/vendors/deleteVendor/:vendor_id
-router.get("/deletevendor/:vendor_id", vendorsController.deleteVendor);
+router.get("/deleteVendor/:vendor_id", vendorsController.deleteVendor);
 
 //locahost:3000/vendors/showUpdateVendorForm/:vendor_id
 router.get("/showUpdateVendorForm/:vendor_id", vendorsController.showUpdateVendorForm);
 
-//localhost:3000/vendors/saveUpdatevendor/:vendor_id
-router.post("/saveUpdatevendor/:vendor_id", uploadImg("vendors"),
+//localhost:3000/vendors/saveUpdateVendor/:vendor_id
+router.post("/saveUpdateVendor/:vendor_id", uploadImg("vendors"),
  vendorsController.updateVendor);
 
 // localhost:3000/vendors/login

@@ -1,8 +1,301 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* ----------------------- login ------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
 }
 
-a {
-  color: #00B7FF;
+body {
+    background: #ecf0f3
 }
+
+.login {
+    max-width: 350px;
+    min-height: 500px;
+    margin: 80px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
+}
+
+.logo {
+    width: 80px;
+    margin: auto
+}
+
+.logo img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
+}
+
+.login .name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: #555
+}
+
+.login .form-field input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px
+}
+
+.login .form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
+}
+
+.login .form-field .fas {
+    color: #555
+}
+
+.login .btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+    letter-spacing: 1.3px
+}
+
+.login .btn:hover {
+    background-color: #039BE5
+}
+
+.login a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #03A9F4
+}
+
+.login a:hover {
+    color: #039BE5
+}
+
+@media(max-width: 380px) {
+    .login {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px
+    }
+}
+
+/* ------------------- FIN LOGIN ----------------------*/
+
+
+/* ------------------- CABECERA ---------------------- */
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    outline-width: 0
+}
+
+.card1-cabecera {
+    border: none;
+    width: 35%;
+    height: auto;
+    background-color: white !important;
+    z-index: 1;
+}
+
+
+.btn-pink {
+    background: #fa8f8f;
+    font-size: 16px;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #FF5252;
+    text-transform: uppercase;
+    margin-top: 20px
+}
+
+.btn-pink:hover {
+    background: #F44336;
+    color: #fff
+}
+
+@media screen and (max-width: 768px) {
+    .card2 {
+        height: 160px
+    }
+
+    .blocks {
+        top: -8px
+    }
+
+    .img-block {
+        width: 80px;
+        height: 100px;
+        margin-bottom: 5px
+    }
+}
+
+/* ------------------- FIN CABECERA ---------------------- */
+
+/* -------------------- All Vendors ---------------------- */
+
+.vendedores{
+    background-image: url(../images/fondo-fotos-blancoNegro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-vendors{
+    border-radius: 20px;
+    background: #c5c4c4;
+    box-shadow: 5px 5px 15px #f7caca, -5px -5px 15px #ffffff;
+    border: none;
+
+    
+}
+
+.card-body a{
+    font-size: 12px;
+
+}
+
+.card img {
+    border-radius: 50%;
+    background: linear-gradient(145deg, #141414, #7c7979);
+    box-shadow: 10px 10px 30px #bdd0f3, -10px -10px 30px #ffffff;
+    object-fit: cover;
+}
+
+.neo-button {
+    width: 40px;
+    height: 40px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);
+    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff
+}
+
+.neo-button:active {
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);
+    box-shadow: inset 20px 20px 60px #cacaca, inset -20px -20px 60px #ffffff
+}
+
+.fa-facebook {
+    color: #3b5998
+}
+
+.fa-linkedin {
+    color: #0077b5
+}
+
+
+.fa-youtube {
+    color: #cd201f
+}
+
+.fa-twitter {
+    color: #55acee
+}
+
+/* ------------------ FIN All Vendors -------------------- */
+
+/* ---------------- Products All Vendors ----------------- */
+
+.card-products {
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.like {
+    color: #CFD8DC
+}
+
+.like-checked {
+    color: #E53935
+}
+
+.like:hover {
+    color: #E53935;
+    cursor: pointer
+}
+
+.pic1 {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+
+.product-pic {
+    padding-left: auto;
+    padding-right: auto;
+    width: 100%;
+    height: auto;
+}
+
+.card-1 {
+    padding: 0px 30px 0px 30px !important;
+    border: none
+}
+
+.card-1 h3{
+    font-size: 18px;
+}
+
+.card-1 h5{
+    font-size: 12px;
+}
+
+
+.category {
+    padding-top: 25px;
+    color: grey
+}
+
+.product-name {
+    padding-bottom: 15px
+}
+
+.price {
+    font-size: 18px
+}
+
+.star-active {
+    color: #FFCA28 !important
+}
+
+.fa-star {
+    color: #CFD8DC;
+    cursor: pointer
+}
+
+
+/* ---------------- FIN Products All Vendors ----------------- */

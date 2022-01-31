@@ -3,7 +3,6 @@ const router = express.Router();
 const uploadImages = require("../middleware/multer");
 const productController = require("../controllers/productController");
 
-// ruta raíz: localhost:3000/products
 
 //localhost:3000/products/showFormProduct/:vendor_id
 router.get("/showFormProduct/:vendor_id", productController.showFormProduct);

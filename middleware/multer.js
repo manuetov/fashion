@@ -18,3 +18,23 @@ function uploadImage(a){
 };
 
 module.exports = uploadImage;
+
+// const multer = require("multer");
+
+// function uploadImage(a) {
+//   const storage = multer.diskStorage({
+//     destination: `./public/images/${a}`,
+//     filename: function (req, file, cb) {
+//       console.log(file);
+//       let extension = file.originalname.split(".")[1];
+//       console.log(extension);
+//       cb(null, Date.now() + "." + extension);
+//     },
+//   });
+
+//   //
+//   const upload = multer({ storage: storage }).single("imagen"); //img es el name de los inputs type="file"
+//   return upload;
+// }
+
+// module.exports = uploadImage;

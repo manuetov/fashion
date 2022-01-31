@@ -12,9 +12,9 @@ class productController {
   createProduct = (req, res) => {
     let vendor_id = req.params.vendor_id;
     let { name, description, price } = req.body;
-    let imagen = req.file.filename;
-    let sql = `INSERT INTO product (name, description, price, imagen, vendor_id)
-     VALUES ( '${name}', '${description}', ${price}, '${imagen}', ${vendor_id})`;
+    let img = req.file.filename;
+    let sql = `INSERT INTO product (name, description, price, img, vendor_id)
+     VALUES ( '${name}', '${description}', ${price}, '${img}', ${vendor_id})`;
     connection.query(sql, (error, result) => {
       if (error) throw error;
       res.redirect(`/vendors/oneVendor/${vendor_id}`);
@@ -36,9 +36,9 @@ class productController {
   updateProduct = (req, res) => {
     let { product_id, vendor_id } = req.params;
     let { name, description, price } = req.body;
-    let imagen = req.file.filename;
+    let img = req.file.filename;
     let sql = `UPDATE product SET product_name = '${name}',
-     description = '${description}', price = ${price}, imagen = '${imagen}'
+     description = '${description}', price = ${price}, img = '${img}'
       WHERE product_id = ${product_id} `;
     connection.query(sql, (error, result) => {
       if (error) throw error;
