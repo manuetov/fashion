@@ -9,56 +9,53 @@
   
   <nav>
     <%- include('partials/navbar'); %>
-  </nav>
-  
-  
+  </nav>  
   
   <body>
     <div class="flex-container">
     <!-- ============================= CABECERA ================================================ -->
     <section class="cabecera">
       <div class="row mt-5">
-        <div class="col-12 d-flex justify-content-between">
-          <div class="col-4 align-self-end ms-3">
+        <div class="d-flex flex-wrap m-auto justify-content-center">
+          <div class="col-md-4 col-sm-6 align-self-end ">
             <img src="/images/ropa-usada-10.jpg" style="width: 95%; height:auto" alt="">
           </div>
-          <div class="col-4 ">
+          <div class="col-md-3 col-sm-6  ">
             <img src="/images/ropa-usada-2.jpg" style="width: 95%; height:auto" alt="">
           </div>
-          <div class="col-4 align-self-end me-5">
+          <div class="col-md-4 col-sm-6 align-self-end">
             <img src="/images/ropa-usada-12.jpg" style="width: 95%; height:auto" alt="">
           </div>
         </div>
       </div>
       <div class="row mt-2">
-        <div class="col-12 d-flex justify-content-between">
-          <div class="col-4 align-self-center ">
+        <div class="d-flex flex-wrap m-auto justify-content-center">
+          <div class="col-md-4 col-sm-6 align-self-center ">
             <img src="/images/ropa-usada-3.jpg" style="width: 95%; height:auto" alt="">
           </div>
-          <div class="col-4 text-center p-3 card1-cabecera">
+          <div class="col-md-4 col-sm-8 text-center p-3 card1-cabecera">
             <h3><strong>Tu tienda de ropa de segunda mano</strong></h3>
             <small class="">Pantalones, Jerseys, Camisas, zapatos & muchos más.</small><br>
             <a href="/vendors/createVendor"><button class="btn btn-pink m-2">Registrate
                 <div class="fa fa-angle-right"></div>
               </button><br></a>
-    
             <span> y vende la ropa que ya no usas</span>
           </div>
-          <div class="col-4 align-self-center">
-            <img src="/images/ropa-usada-7.jpg" style="width: 95%; height:auto" alt="">
+          <div class="col-md-4 col-sm-6 align-self-center">
+            <img src="/images/ropa-usada-7.jpg" style="width: 95%; height:100%" alt="">
           </div>
         </div>
       </div>
       <div class="row mt-2 ">
-        <div class="col-12 d-flex justify-content-between">
-          <div class="col-4 ms-3 ">
-            <img src="/images/ropa-usada-9.jpg" style="width: 95%; height:auto" alt="">
+        <div class="d-flex flex-wrap m-auto justify-content-center">
+          <div class="col-md-4 col-sm-6 ms-3 ">
+            <img src="/images/ropa-usada-9.jpg" style="width: 90%; height:auto" alt="">
           </div>
-          <div class="col-4 ">
-            <img src="/images/portada.jpg" style="width: 95%; height:80%" alt="">
+          <div class="col-md-3 col-sm-6 ">
+            <img src="/images/fotos_resize_portada.jpg" style="width: 90%; height:80%" alt="">
           </div>
-          <div class="col-4 ">
-            <img src="/images/ropa-usada.jpg" style="width: 95%; height:auto" alt="">
+          <div class="col-md-4 col-sm-6 ">
+            <img src="/images/ropa-usada.jpg" style="width: 90%; height:auto" alt="">
           </div>
         </div>
       </div>
@@ -68,16 +65,23 @@
     <section id="about-us">
       <div class="container-fluid">
         <div class="row mt-5">
-          <div class="col-6">
+          <div class="col-5">
+            
     
           </div>
-          <div class="col-6">
-            <h3 class=""> Acerca de nosotros</h3>
-            <h5 class=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi perspiciatis
-               doloremque nulla cum soluta beatae culpa rerum ea fuga dolores, consectetur ad cupiditate 
-               similique voluptas, velit enim aut autem architecto quaerat dignissimos nostrum iste 
-               perferendis? Suscipit illum nostrum, soluta sunt minima impedit rem, possimus eum quis
-                repellendus magnam animi! Commodi!</h5>
+          <div class="col-7">
+            <h3 class="fs-2"> Acerca de nosotros</h3>
+            <h5 class="lh-base text-secondary"> Vende la ropa que ya no usas. Puedes ponerla a la venta muy rápido y vender 
+              sin comisión. ¿Demasiada ropa? ¡Véndela rápido! Cada segundo un artículo es comprado en SecondLife. 
+              ¡Regístrate Ahora! Descarga la App Gratis.<br>
+              Presentar artículos en Vinted no tiene coste. Para hacerlo, los vendedores deben completar
+              un cuestionario y describir el artículo con la mayor precisión posible, indicar cualquier
+              posible defecto y expresar el precio del artículo. El artículo publicado también debe ser fotografiado.
+              Se debe subir, al menos, una foto de buena calidad. Las fotos deben reflejar la calidad y el aspecto 
+              externo reales del artículo, así como la presencia de cualquier defecto que el artículo posea. La 
+              cantidad de artículos publicados en el Catálogo es ilimitada, pero no se puede publicar el mismo
+               artículo más de una vez, y los Usuarios o Usuarios Pro no pueden indicar cuántas unidades del mismo 
+               artículo tienen.   </h5>
           </div>
         </div>
       </div>
@@ -170,21 +174,12 @@
       </div>
     </section>
 
+    <!-- ======================================= FOOTER ======================================== -->
+    <footer>
+      <%- include('partials/footer'); %>
+    </footer>
 
-
-
-      
-
-
-
-
-
-
-    <a href="/vendors/createVendor" class="btn btn-success">Registrate</a>
-    <hr>
-
-
-  </div>  
+  </div>  <!-- fin container -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
