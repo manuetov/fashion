@@ -91,12 +91,7 @@ body {
     color: #039BE5
 }
 
-@media(max-width: 380px) {
-    .login {
-        margin: 30px 20px;
-        padding: 40px 15px 15px 15px
-    }
-}
+
 
 /* ------------------- FIN LOGIN ----------------------*/
 
@@ -128,7 +123,6 @@ body {
     z-index: 1;
 }
 
-
 .btn-pink {
     background: #fa8f8f;
     font-size: 16px;
@@ -145,21 +139,6 @@ body {
     color: #fff
 }
 
-@media screen and (max-width: 768px) {
-    .card2 {
-        height: 160px
-    }
-
-    .blocks {
-        top: -8px
-    }
-
-    .img-block {
-        width: 80px;
-        height: 100px;
-        margin-bottom: 5px
-    }
-}
 
 /* ------------------- FIN CABECERA ---------------------- */
 
