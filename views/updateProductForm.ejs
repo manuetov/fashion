@@ -12,28 +12,38 @@
 </nav>
 
 <body>
-  <div class="d-flex justify-content-center">
-    <form class="w-50" action="/products/updateProduct/<%- result[0].product_id %>/<%- result[0].vendor_id %>"
-      method="post" enctype="multipart/form-data">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name" value="<%- result[0].name %>" />
+  <section class="p-5 vendedores">
+    <div class="formularios">
+      <div class="logo">
+        <img src=/images/logo_secondLife_200.png alt="logo">
       </div>
-      <div class="mb-3">
-        <label for="descripción" class="form-label">Descripción</label>
-        <input type="text" class="form-control" id="surname" name="description" value="<%- result[0].description %>" />
-      </div>
-      <div class="mb-3">
-        <label for="precio" class="form-label">Precio</label>
-        <input type="text" class="form-control" id="raza" name="precio" value="<%- result[0].precio %>" />
-      </div>
-      <div class="mb-3">
-        <label for="imagen" class="form-label">Imagen</label>
-        <input type="file" class="form-control" id="img" name="imagen" value="<%- result[0].img %>" />
-      </div>
-      <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
-  </div>
+      <div class="text-center mt-3 p-3 fs-3"> Edición de producto
+      </div><br>
+      <form action="/vendors/createVendor" method="post" enctype="multipart/form-data">
+        <div class="form-field d-flex align-items-center"> <span class="fa fa-brand">
+          </span> <input type="text" name="name" id="name" placeholder="Nombre" value="<%- result[0].name %>" />
+        </div>
+        <div>
+          <label for="description" class="form-label">Descripción</label>
+          <textarea name="description" msg cols="60" rows="5" class="form-control" id="desc"
+            value="<%- result[0].description %>" />
+          </textarea><br>
+          <div class="form-field d-flex align-items-center">
+            <input type="file" class="form-control" id="avatar" name="img" />
+          </div>
+          <div class="form-field d-flex align-items-center"> <span class="fa fa-money">
+            </span> <input type="text" name="price" id="name" placeholder="Precio" value="<%- result[0].precio %>" />
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-25 alingn-self-center">Enviar</button>
+          </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <%- include('partials/footer'); %>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

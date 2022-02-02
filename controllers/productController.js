@@ -37,7 +37,7 @@ class productController {
     let { product_id, vendor_id } = req.params;
     let { name, description, price } = req.body;
     let img = req.file.filename;
-    let sql = `UPDATE product SET product_name = '${name}',
+    let sql = `UPDATE product SET name = '${name}',
      description = '${description}', price = ${price}, img = '${img}'
       WHERE product_id = ${product_id} `;
     connection.query(sql, (error, result) => {

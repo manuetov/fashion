@@ -23,6 +23,16 @@ body {
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
 }
 
+.formularios {
+  max-width: 550px;
+  min-height: 500px;
+  margin: 80px auto;
+  padding: 40px 30px 30px 30px;
+  background-color: #ecf0f3;
+  border-radius: 15px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
+}
+
 .logo {
     width: 280px;
     margin: auto
@@ -36,37 +46,37 @@ body {
     box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #98ccf3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
 }
 
-.login .name {
-    font-weight: 600;
+.login .name, .formularios .name  {
+    font-weight: 500;
     font-size: 1.4rem;
     letter-spacing: 1.3px;
     padding-left: 10px;
     color: #555
 }
 
-.login .form-field input {
+.login .form-field input, .formularios .form-field input {
     width: 100%;
     display: block;
     border: none;
     outline: none;
     background: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #666;
     padding: 10px 15px 10px 10px
 }
 
-.login .form-field {
+.login .form-field, .formularios .form-field {
     padding-left: 10px;
     margin-bottom: 20px;
     border-radius: 20px;
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
 }
 
-.login .form-field .fas {
+.login .form-field .fas, .formularios .form-field .fas  {
     color: #555
 }
 
-.login .btn {
+.login .btn, .formularios .btn  {
     box-shadow: none;
     width: 100%;
     height: 40px;
@@ -77,17 +87,17 @@ body {
     letter-spacing: 1.3px
 }
 
-.login .btn:hover {
+.login .btn:hover, .formularios .btn:hover  {
     background-color: #039BE5
 }
 
-.login a {
+.collapse a, .footer-social-link ul i{
     text-decoration: none;
-    font-size: 0.8rem;
-    color: #03A9F4
+    font-size: 1rem;
+    color: transparent;
 }
 
-.login a:hover {
+.login a:hover, .formularios a:hover {
     color: #039BE5
 }
 
@@ -113,14 +123,19 @@ body {
   }
 
 /* ------------------- CABECERA ---------------------- */
-
+/* .cabecera-1{
+  z-index: 2;
+} */
 
 .card1-cabecera {
     border: none;
-    width: 30%;
+    height: auto;
+    position: absolute;
+    padding: 5vh 5vh;
+    bottom: 30vh;
+    width: 45%;
     height: auto;
     background-color: white !important;
-    z-index: 1;
 }
 
 .btn-pink {
@@ -140,11 +155,151 @@ body {
 }
 
 
+@media only screen and (max-width: 2400px){
+  .card1-cabecera{
+    bottom:auto;
+    right: 30vw;
+    padding: 3vh 3vh;
+    width: 45%;
+    height: 25vw !important;
+  }
+}
+
+@media only screen and (max-width: 996px){
+  .card1-cabecera{
+    bottom:auto;
+    right: 30vw;
+    padding: 3vh 3vh;
+    width: 45%;
+    height: 30vw !important;
+  }
+}
+
+@media only screen and (max-width: 768px){
+
+  .img2 {
+    position: absolute;
+    left: 50vw;
+  }
+
+  .img3, .img4 {
+    visibility: hidden;
+  }
+
+  .img9 {
+    display: none !important;
+  }
+
+  .img6 {
+    position: absolute;
+    right:50vw;
+    top:35vw;
+    z-index: -1;
+    width:55%;
+    height:auto !important;
+  }
+
+  .card1-cabecera{
+    top:25vw;
+    padding: 3vh 3vh;
+    width: 45%;
+    height: 52vw !important;
+
+  }
+
+  .img7{
+    position:absolute;
+    right:50vw;
+    top:65vw;
+    z-index: -1;
+    width: 50%;
+    height:40vw !important;
+  }
+
+  .img8 {
+    position: absolute;
+    top:56vw;
+    left:50vw;
+    z-index: -1;
+    width: 50%;
+    height: 42vw !important;
+  }
+
+  @media only screen and (max-width: 576px){
+
+    .img1 {
+      position: absolute;
+      right: 40vw;
+      top: 20vw;
+      width: 60% !important;   
+      height: 90% !important;
+    }
+
+    .img2 {
+      position: absolute;
+      top: 20vw;
+      left: 50vw;
+      width: 60% !important;
+      height: auto !important;
+    }
+
+    .img6 {
+      position: absolute;
+      right:45vw;
+      top:52vw;
+      z-index: -1;
+      width:58%;
+      height:auto !important;
+    }
+
+    .img7{
+      position:absolute;
+      right:45vw;
+      top:83vw;
+      z-index: -1;
+      width: 60%;
+      height: 42vw !important;
+    }
+    .img8 {
+      position: absolute;
+      top:76vw;
+      left:48vw;
+      z-index: -1;
+      width: 70%;
+      height: 46vw !important;
+      object-fit: cover;
+    }
+  
+    .img3, .img4, .img9  {
+      visibility: hidden !important;
+    }
+
+    .img10{
+      display: none !important;
+    }
+
+    .card1-cabecera{
+      top:30vw;
+      padding: 3vh 3vh;
+      bottom: 10vh;
+      width: 45% !important;
+      height: 75vw !important;
+      
+    }
+
+  }
+}
+
+
 /* ------------------- FIN CABECERA ---------------------- */
+
+
+
+
 
 /* -------------------- All Vendors ---------------------- */
 
-.vendedores{
+.vendedores, .crea_vendedor{
     background-image: url(../images/fondo-fotos-blancoNegro.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -156,8 +311,6 @@ body {
     background: #c5c4c4;
     box-shadow: 5px 5px 15px #f7caca, -5px -5px 15px #ffffff;
     border: none;
-
-    
 }
 
 .card-body a{
