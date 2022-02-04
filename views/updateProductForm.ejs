@@ -14,29 +14,37 @@
 <body>
   <section class="p-5 vendedores">
     <div class="formularios">
+
       <div class="logo">
         <img src=/images/logo_secondLife_200.png alt="logo">
       </div>
-      <div class="text-center mt-3 p-3 fs-3"> Edición de producto
-      </div><br>
-      <form action="/vendors/createVendor" method="post" enctype="multipart/form-data">
+
+      <div class="text-center mt-3 p-3 fs-3"> Edición de producto </div><br>
+
+      <form action="/products/updateProduct/<%- result[0].product_id %>/<%- result[0].vendor_id %>" method="post" enctype="multipart/form-data">
+
         <div class="form-field d-flex align-items-center"> <span class="fa fa-brand">
           </span> <input type="text" name="name" id="name" placeholder="Nombre" value="<%- result[0].name %>" />
         </div>
+
         <div>
           <label for="description" class="form-label">Descripción</label>
           <textarea name="description" msg cols="60" rows="5" class="form-control" id="desc"
-            value="<%- result[0].description %>" />
-          </textarea><br>
-          <div class="form-field d-flex align-items-center">
-            <input type="file" class="form-control" id="avatar" name="img" />
-          </div>
-          <div class="form-field d-flex align-items-center"> <span class="fa fa-money">
-            </span> <input type="text" name="price" id="name" placeholder="Precio" value="<%- result[0].precio %>" />
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary w-25 alingn-self-center">Enviar</button>
-          </div>
+          placeholder="<%- result[0].description %>" value="<%- result[0].description %>"></textarea><br>
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+          <input type="file" class="form-control" id="avatar" name="img" value="<%- result[0].img %>"/>
+        </div>
+
+        <div class="form-field d-flex align-items-center"> <span class="fa fa-money">
+          </span> <input type="text" name="price" id="name" placeholder="Precio" value="<%- result[0].price %>" />
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary w-25 alingn-self-center">Enviar</button>
+        </div>
+
       </form>
     </div>
   </section>

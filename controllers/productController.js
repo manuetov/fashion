@@ -1,7 +1,6 @@
 const connection = require("../config/db");
 
 class productController {
-
   //Muestra el formulario de introducir un nuevo producto asociado a un vendedor.
   showFormProduct = (req, res) => {
     let vendor_id = req.params.vendor_id;
@@ -36,10 +35,21 @@ class productController {
   updateProduct = (req, res) => {
     let { product_id, vendor_id } = req.params;
     let { name, description, price } = req.body;
-    let img = req.file.filename;
-    let sql = `UPDATE product SET name = '${name}',
-     description = '${description}', price = ${price}, img = '${img}'
-      WHERE product_id = ${product_id} `;
+    // let img = req.file.filename;
+
+    let sql = `UPDATE product SET name = '${name}', price = ${price},`;
+
+    if (req.file != undefined) {
+      let img = req.file.filename;
+      sql += `img = '${img}', `;
+    }
+
+    if (description != "") {
+      sql += `description = '${description}',`;
+    }
+    sql = sql.substring(0, sql.length - 1); // quita la última coma
+    sql += ` WHERE product_id = ${product_id} `;
+    console.log(sql);
     connection.query(sql, (error, result) => {
       if (error) throw error;
       res.redirect(`/vendors/oneVendor/${vendor_id}`);
@@ -56,7 +66,6 @@ class productController {
       res.redirect(`/vendors/oneVendor/${vendor_id}`);
     });
   };
-
 }
 
 module.exports = new productController();

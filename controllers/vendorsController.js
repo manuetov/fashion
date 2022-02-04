@@ -2,7 +2,6 @@ const connection = require("../config/db");
 const sha1 = require("sha1");
 
 class VendorsController {
-
   //   Trae todos los vendedors de la tabla vendor
   selectAllVendors = (req, res) => {
     let sqlVendor = `SELECT * FROM vendor`;
@@ -39,15 +38,17 @@ class VendorsController {
   createVendor = (req, res) => {
     let { name, surname, email, password, phone, description } = req.body;
     let img = req.file.filename;
-    console.log(req.file);
+
     let encrypted_password = sha1(password);
     let sql = `INSERT INTO vendor (name, surname, email, password, phone,
-     description, img) VALUES ('${name}', '${surname}', '${email}', 
-     '${encrypted_password}', '${phone}', '${description}','${img}')`;
+      description, img) VALUES ('${name}', '${surname}', '${email}', 
+      '${encrypted_password}', '${phone}', '${description}','${img}')`;
+
     connection.query(sql, (error, result) => {
       if (error) throw error;
       console.log(result);
       let vendor_id = result.insertId;
+      console.log(result.insertId);
       res.redirect(`/vendors/oneVendor/${vendor_id}`);
     });
   };
@@ -76,13 +77,23 @@ class VendorsController {
   //Modifica un vendedor
   updateVendor = (req, res) => {
     let vendor_id = req.params.vendor_id;
-    let { name, surname, email, password } = req.body;
-    let img = req.file.filename;
+    let { name, surname, email, password, phone, description } = req.body;
+    // let img = req.file.filename;
     console.log(req.file);
     let encrypted_password = sha1(password);
+
     let sql = `UPDATE vendor SET name = '${name}',surname = '${surname}', 
-    email = '${email}', password = '${encrypted_password}',img = '${img}' 
-    WHERE vendor_id = '${vendor_id}' `;
+    email = '${email}', password = '${encrypted_password}', phone = '${phone}',
+    description = '${description}' WHERE vendor_id = '${vendor_id}'`;
+
+    if (req.file != undefined) {
+      let img = req.file.filename;
+      console.log(img,"ha entrado");
+      sql = `UPDATE vendor SET name = '${name}',surname = '${surname}', 
+        email = '${email}', password = '${encrypted_password}',img = '${img}' 
+        WHERE vendor_id = '${vendor_id}' `;
+    }
+
     connection.query(sql, (error, result) => {
       if (error) throw error;
       res.redirect(`/vendors/oneVendor/${vendor_id}`);

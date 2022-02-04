@@ -1,12 +1,24 @@
 /* ----------------------- login ------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: 'Dancing';
 }
 
 body {
@@ -154,24 +166,68 @@ body {
     color: #fff
 }
 
-
-@media only screen and (max-width: 2400px){
+@media only screen and (max-width: 2440px){
   .card1-cabecera{
-    bottom:auto;
+    top:25vw;
+    right: 35vw;
+    padding: 3vh 3vh;
+    width: 35%;
+    height: 25vw !important;
+    text-align: center;
+  }
+  .square-1{
+    bottom: -5vw !important;
+    right: 35vh  !important;
+    width: 75vw !important;
+  }
+  .square-2{
+    top: 10vw !important;
+    left: 10vh  !important;
+    width: 55vw !important;
+    height: 105vh !important;
+  }
+}
+
+@media only screen and (max-width: 1440px){
+  .card1-cabecera{
+    top:25vw;
     right: 30vw;
     padding: 3vh 3vh;
-    width: 45%;
+    width: 40%;
     height: 25vw !important;
+    text-align: center;
+  }
+  .square-1{
+    bottom: -5vw !important;
+    right: 35vh  !important;
+    width: 75vw !important;
+  }
+  .square-2{
+    top: -10vw !important;
+    left: 10vh  !important;
+    width: 55vw !important;
+    height: 55vh !important;
   }
 }
 
 @media only screen and (max-width: 996px){
   .card1-cabecera{
-    bottom:auto;
+    top:25vw;
     right: 30vw;
     padding: 3vh 3vh;
     width: 45%;
-    height: 30vw !important;
+    height: 32vw !important;
+  }
+  .square-1{
+    top: 25vw !important;
+    left: 35vh  !important;
+    width: 75vw !important;
+  }
+  .square-2{
+    top: -35vw !important;
+    left: 50vh  !important;
+    width: 55vw !important;
+    height: 75vh !important;
   }
 }
 
@@ -202,9 +258,9 @@ body {
   .card1-cabecera{
     top:25vw;
     padding: 3vh 3vh;
-    width: 45%;
+    right: 25vw;
+    width: 50% !important;
     height: 52vw !important;
-
   }
 
   .img7{
@@ -225,7 +281,32 @@ body {
     height: 42vw !important;
   }
 
+  .square-2{
+    margin-left: -10vw!important;
+    margin-top: 10vw !important;
+    height: 85vw !important;
+    width: 60vw !important;
+  }
+
+  .square-1{
+    top: 45vw!important;
+    left: 35vw!important;
+    width: 80vw !important;
+  }
+
   @media only screen and (max-width: 576px){
+
+    .square-2{
+      left: 65vw!important;
+      top: -75vw!important;
+      height: 85vh!important;
+    }
+  
+    .square-1{
+      left: 30vw !important;
+      margin-top: -60vw !important;
+      width: 60vw !important;
+    }
 
     .img1 {
       position: absolute;
@@ -274,28 +355,44 @@ body {
       visibility: hidden !important;
     }
 
-    .img10{
+    .img11{
       display: none !important;
     }
 
     .card1-cabecera{
       top:30vw;
       padding: 3vh 3vh;
-      bottom: 10vh;
-      width: 45% !important;
-      height: 75vw !important;
-      
+      right: 10vh;
+      width: 50% !important;
+      height: 80vw !important;    
     }
-
   }
 }
 
 
 /* ------------------- FIN CABECERA ---------------------- */
 
+/* ------------------- about us ---------------------------*/
 
 
+.square-line {
+  height: 2px;
+  width: 200px;
+  display: inline-block;
+  background-color: violet;
+}
 
+.square-1{
+  z-index: -1;
+  background-color: #e2cabd;
+ 
+}
+
+.square-2{
+  z-index: -2;
+  background-color: #dadee7;
+
+}
 
 /* -------------------- All Vendors ---------------------- */
 
@@ -433,6 +530,9 @@ body {
     color: #FFCA28 !important
 }
 
+.star-inactive {
+  color: #CFD8DC !important;
+}
 .fa-star {
     color: #CFD8DC;
     cursor: pointer

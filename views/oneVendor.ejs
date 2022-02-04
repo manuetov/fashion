@@ -14,13 +14,13 @@
 <body>
 
   <!-- ============================= VENDOR ================================================ -->
-  <section>
-    <div class="row vendedores">
+  <section class="pt-4 mt-5">
+    <div class="row p-3 vendedores">
       <div class="col-md-12 col-xs-6">
         <div class="d-flex flex-wrap justify-content-center">
             <div class="card card-vendors p-3 py-4 m-2" style="width: 18rem">
-              <div class="text-center card-body"> <img src="/images/vendors/<%-resultVendor[0].img %>" width="100px" ; height="100px"
-                  class="rounded-circle">
+              <div class="text-center card-body"> <img src="/images/vendors/<%- resultVendor[0].img %>"
+                  class="rounded-circle" style="max-width:10rem; max-height:10rem;">
                 <h3 class="fs-5 mt-2">
                   <%- resultVendor[0].name %>
                 </h3>
@@ -56,10 +56,11 @@
             <div class="col-md-3 col-lg-3">
               <div class="card card-1">
                 <div class="row">
-                  <div class="fa fa-heart like like-checked"></div>
+                  <div class="fa fa-heart like like-unchecked"></div>
                 </div>
                 <div class="product-pic">
-                  <img class="pic1" src="/images/products/<%-product.img %>">
+                  <img class="pic1" style="max-width:14rem; max-height:14rem;" 
+                  src="/images/products/<%-product.img %>">
                 </div>
                 <div>
                   <h3 class="product-name mt-1 text-center">
@@ -74,8 +75,8 @@
                     <%- product.price %> €
                   </p>
                   <div class="stars">
-                    <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active">
-                    </span> <span class="fa fa-star star-active"></span> <span class="fa fa-star"></span>
+                    <span class="fa fa-star star-inactive"></span> <span class="fa fa-star star-inactive">
+                    </span> <span class="fa fa-star star-inactive"></span> <span class="fa fa-star"></span>
                     <span class="fa fa-star mb-5"></span>
                     <a href="/products/showEditFormProduct/<%- product.product_id %>" class="btn btn-primary m-2">Editar
                       producto</a> 
